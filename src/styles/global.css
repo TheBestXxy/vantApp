@@ -1,0 +1,45 @@
+#app {
+    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+}
+
+html {
+    box-sizing: border-box;
+
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 7.5rem;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0
+}
+
+li {
+    box-sizing: border-box;
+    display: block;
+}
+
+p {
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: black
+}
