@@ -23,5 +23,21 @@ module.exports = {
                 errors: true
             }
         }
+    },
+    css: {
+        extract: true
+    },
+    chainWebpack: config => {
+        config.optimization.minimize(true);
+        config.optimization.splitChunks({
+            cacheGroups: {
+                vendors: {
+                    test: /[\\/]node_modules[\\/](vue|vue-router|vant)[\\/]/,
+                    name: "vendor",
+                    chunks: "initial",
+                    priority: -10
+                }
+            }
+        });
     }
 }
