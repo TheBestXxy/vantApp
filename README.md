@@ -1,7 +1,9 @@
-# app
+# app vant + vue + rem  
 
 ## Project setup
 ```
+npm install yarn -g
+
 yarn install
 ```
 
