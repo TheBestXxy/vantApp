@@ -1,7 +1,6 @@
-import index from './index.vue'
-
+import application from './application.vue'
 
 export const routes = [{
     path: '/application',
-    component: index
+    component: application
 }];

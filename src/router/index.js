@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import index from '@/views/index.vue';
 Vue.use(VueRouter);
 
+// 获取二级子路由
 const files = require.context('@/views', true, /index.js$/)
 let configRouters = [];
 console.log(files.keys()) // ["./home.js"] 返回一个数组
@@ -12,9 +13,9 @@ files.keys().forEach(key => {
     configRouters = configRouters.concat(files(key).routes) // 读取出文件中的default模块
 })
 
+// 获取一级路由
 const rootFiles = require.context('@/views', false, /\.vue$/)
 let rootRouters = [];
-console.log(rootFiles)
 
 function capitalizeFirstLetter(str) {
     // return str.charAt(0).toUpperCase() + str.slice(1)
@@ -34,7 +35,6 @@ rootFiles.keys().forEach(key => {
     }) // 读取出文件中的default模块
 })
 
-
 const routes = [{
     path: '/',
     redirect: '/index',
@@ -42,7 +42,7 @@ const routes = [{
 
 configRouters = configRouters.concat(routes);
 configRouters = configRouters.concat(rootRouters);
-console.log(configRouters);
+console.log('路由=', configRouters);
 
 export default new VueRouter({
     scrollBehavior: () => ({

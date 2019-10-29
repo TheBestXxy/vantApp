@@ -1,6 +1,6 @@
 'use strict'
 
-const port = process.env.port || process.env.npm_config_port || 8082 // dev port
+const port = process.env.port || process.env.npm_config_port || 3000 // dev port
 module.exports = {
     publicPath: '/',
     outputDir: 'dist',
@@ -25,7 +25,7 @@ module.exports = {
         }
     },
     css: {
-        extract: true
+        extract: process.env.NODE_ENV === "development" ? false : true
     },
     chainWebpack: config => {
         config.optimization.minimize(true);

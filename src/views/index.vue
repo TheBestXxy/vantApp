@@ -2,7 +2,7 @@
     <transition name="van-slide">
         <div>
             <van-nav-bar title="标题" left-text="返回" right-text="按钮" left-arrow @click-left="onClickLeft" @click-right="onClickRight" />
-            3333333333333
+            demo
         </div>
     </transition>
 </template>
@@ -12,7 +12,6 @@
 export default {
     name: '',
     components: {
-
     },
     data () {
         return {
@@ -26,7 +25,7 @@ export default {
         }
     },
     mounted () {
-        console.log(this);
+        console.log(this.$bridge)
     },
     methods: {
         onSelect (item) {
@@ -37,9 +36,10 @@ export default {
         myclick () {
         },
         onClickLeft () {
-            this.$router.push('/demo')
+            this.$router.push('/demo');
         },
         onClickRight () {
+            this.$bridge.CheckUpdate();
             this.$toast('按钮');
         }
     }

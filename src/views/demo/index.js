@@ -1,7 +1,10 @@
 import demo from './demo.vue'
 
-
-export const routes = [{
+const routes = [{
     path: '/demo',
     component: demo
 }];
+
+export {
+    routes
+};
