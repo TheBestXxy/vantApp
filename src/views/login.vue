@@ -1,28 +1,23 @@
 <template>
-    <div>
+    <div class="login">
         login
     </div>
 </template>
 
 <script>
 export default {
-    name: '',
-    components: {
-
+    name: "",
+    components: {},
+    data() {
+        return {};
     },
-    data () {
-        return {
-
-        }
-    },
-    mounted () {
-
-    },
-    methods: {
-
-    }
-}
+    mounted() {},
+    methods: {}
+};
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
+.login {
+    color: @theme-color;
+}
 </style>
