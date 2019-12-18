@@ -1,9 +1,12 @@
 #app {
-    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    font-family: Source Han Sans CN, " Avenir", Microsoft YaHei;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
+}
+
+* {
+    margin: 0;
+    padding: 0;
 }
 
 html {
@@ -22,15 +25,10 @@ div {
     box-sizing: border-box;
 }
 
-p {
-    padding: 0;
-    margin: 0;
-}
-
 ul {
     list-style-type: none;
     padding: 0;
-    margin: 0
+    margin: 0;
 }
 
 li {
@@ -39,7 +37,36 @@ li {
 }
 
 p {
-    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
     letter-spacing: 1px;
-    color: black
+    color: #333333;
+}
+
+.line-clamp2 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.line-clamp {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.icon {
+    display: block;
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+section {
+    box-sizing: border-box;
+    padding-top: 0.92rem;
 }

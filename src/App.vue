@@ -4,5 +4,12 @@
     </div>
 </template>
 
-<style lang="less">
-</style>
+<script>
+export default {
+    data() {
+        return {};
+    },
+    mounted() {}
+};
+</script>
+<style lang="less"></style>

@@ -1,12 +1,13 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import Layout from '@/components/Layout.vue';
 import index from '@/views/index.vue';
 Vue.use(VueRouter);
 
 // 获取二级子路由
 const files = require.context('@/views', true, /index.js$/)
 let configRouters = [];
-console.log(files.keys()) // ["./home.js"] 返回一个数组
+// console.log(files.keys()) // ["./home.js"] 返回一个数组
 
 files.keys().forEach(key => {
     if (key === './index.js') return
@@ -30,23 +31,38 @@ function validateFileName(str) {
 rootFiles.keys().forEach(key => {
     const fileName = validateFileName(key);
     rootRouters.push({
+        name: fileName,
         path: `/${fileName}`,
         component: rootFiles(key).default
     }) // 读取出文件中的default模块
 })
 
+configRouters = configRouters.concat(rootRouters);
+
 const routes = [{
     path: '/',
     redirect: '/index',
+    component: Layout,
+    children: configRouters
 }];
-
-configRouters = configRouters.concat(routes);
-configRouters = configRouters.concat(rootRouters);
 console.log('路由=', configRouters);
 
-export default new VueRouter({
+const router = new VueRouter({
     scrollBehavior: () => ({
         y: 0
     }),
-    routes: configRouters
+    routes: routes
 })
+
+router.beforeEach((to, from, next) => {
+    if (to.meta.title) {
+        document.title = to.meta.title;
+    }
+    to.params.isTabShow = to.meta.isTabShow || false;
+    to.params.isHeadShow = to.meta.isHeadShow || false;
+    console.log(router);
+    console.log(to);
+    next() // 确保一定要调用 next()
+});
+
+export default router;
