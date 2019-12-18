@@ -18,6 +18,6 @@ export default {
 
 <style lang="less">
 .login {
-    color: @theme-color;
+    // color: @theme-color;
 }
 </style>
